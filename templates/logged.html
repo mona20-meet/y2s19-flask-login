@@ -4,3 +4,11 @@ Hi {{session['name']}}, you are logged in.
 </h1>
 
 <a href = "/logout"> Logout </a>
+<form action="/seejo/{{session['name']}}" method="POST">
+
+<input type="text" name="food" placeholder="favourite food">
+<input type="submit" value="submit">
+<p>YOU LIKE{{session['food']}} ?? ME TOOO!</p>
+
+
+</form>

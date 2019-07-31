@@ -37,7 +37,18 @@ def logged_in():
 
 @app.route('/logout')
 def logout():
+    login_session.clear()
     return home()
+
+@app.route('/seejo/<string:name>', methods=['POST'])
+def add_food(name):
+    update_fav_food(login_session['name'],request.form['food'])
+    return render_template('logged.html')
+
+
+
+
+
 
 
 
